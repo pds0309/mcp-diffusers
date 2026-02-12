@@ -13,6 +13,18 @@ services:
       - mcp-minio_data:/data
     restart: unless-stopped
 
+  minio-init:
+    image: minio/mc
+    depends_on:
+      - mcp-minio
+    entrypoint: >
+      /bin/sh -c "
+      sleep 5;
+      mc alias set local http://mcp-minio:9000 ${MINIO_ROOT_USER:-minioadmin} ${MINIO_ROOT_PASSWORD:-minioadmin};
+      mc mb local/${Z_IMAGE_MINIO_BUCKET_NAME:-zimage};
+      mc anonymous set read local/${Z_IMAGE_MINIO_BUCKET_NAME:-zimage};
+      exit 0;
+      "
 volumes:
   mcp-minio_data:
 
