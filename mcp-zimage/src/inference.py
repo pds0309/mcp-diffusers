@@ -48,7 +48,7 @@ class ZImagePipeline:
 
         logger.info(f"#### Generating image params ####")
         logger.info(f"[prompt]: {prompt}")
-        logger.info(f"[negative prompt]: {prompt}")
+        logger.info(f"[negative prompt]: {negative_prompt}")
         logger.info(f"[resolution]: {width}x{height}")
         logger.info(f"[guidance_scale]: {guidance_scale}")
         logger.info(f"[num_inference_steps]: {num_inference_steps}")

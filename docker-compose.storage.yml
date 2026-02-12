@@ -2,7 +2,7 @@ services:
   mcp-minio:
     container_name: mcp-minio
     image: minio/minio:latest
-    command: server /data --console-address ":${EXTERNAL_MINIO_CONSOLE_PORT:-49001}"
+    command: server /data --console-address ":9001"
     ports:
       - "${EXTERNAL_MINIO_PORT:-49000}:9000"
       - "${EXTERNAL_MINIO_CONSOLE_PORT:-49001}:9001"
