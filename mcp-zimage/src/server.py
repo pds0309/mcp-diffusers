@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import os
 import io
 import time
@@ -165,4 +163,5 @@ async def generate_image(
 
 if __name__ == "__main__":
     transport = os.getenv("MCP_TRANSPORT", "streamable-http")
-    mcp.run(transport=transport, port=8000, host="0.0.0.0")
+    port = os.getenv("INTERNAL_PORT", 8000)
+    mcp.run(transport=transport, port=int(port), host="0.0.0.0")
