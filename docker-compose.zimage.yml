@@ -5,7 +5,7 @@ services:
       context: ./mcp-zimage
       dockerfile: Dockerfile
     ports:
-      - "${PORT:-8000}:8000"
+      - "${Z_IMAGE_PORT:-48001}:8000"
     volumes:
       - huggingface_cache:/root/.cache/huggingface
     environment:
