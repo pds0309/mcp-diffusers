@@ -1,6 +1,6 @@
 services:
-  z-image-mcp:
-    container_name: z-image-mcp
+  mcp-zimage:
+    container_name: mcp-zimage
     build:
       context: ./mcp-zimage
       dockerfile: Dockerfile
